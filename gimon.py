@@ -20,3 +20,4 @@ if c=="+":
     print(sum)
 else:
     print(0)
+print ("Where are you looking and what do you see?")
