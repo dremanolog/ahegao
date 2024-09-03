@@ -32,4 +32,22 @@ if c=="**":
     print(ste)
 else:
     print(0)
-print ("Where are you looking and what do you see?")
+    
+# Where are you looking and what do you see?
+# Well, this is my broken password generator code.
+# p.s. Mika.
+
+import random
+import string
+
+def gen_pas(length):
+	letters = string.ascii_letters
+	numbers = string.digits
+	symbol = string.punctuation
+	password = ''.join((random.choice(letters),random.choice(numbers), random.choice(symbol)))
+	for i in range(length - 3):
+		password += random.choice((letters, numbers, symbol))
+	return password
+length = int(input("Длинна пароля: "))
+password = gen_pas(length)
+print(password)
