@@ -38,4 +38,5 @@ while running:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+    keys = pygame.key.get_pressed()
 
