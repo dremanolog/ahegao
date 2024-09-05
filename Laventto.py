@@ -38,5 +38,18 @@ while running:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-    keys = pygame.key.get_pressed()
+keys = pygame.key.get_pressed()
+if keys[pygame.K_LEFT]:
+    if maze[player_y][player_x - 1] == 0:
+        player_x -= 1
+if keys[pygane.K_RIGHT]:
+    if maze[player_y][player_x + 1] == 0:
+        player_x += 1
+if keys[pygame.K_UP]:
+    if maze[player_y][player_x - 1] == 0:
+        player_x -= 1
+if keys[pygame.K_DOWN]:
+    if maze[player_y][player_x - 1] ==0 :
+        player_x += 1
 
+if player
