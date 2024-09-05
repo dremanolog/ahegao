@@ -31,3 +31,6 @@ maze = [
 player_x, player_y = 1, 1
 
 finish_x, finish_y = 14, 9
+
+running = True
+while running:
