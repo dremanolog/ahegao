@@ -1,0 +1,60 @@
+import pygame
+import sys
+
+# Инициализация Pygame
+pygame.init()
+
+# Настройки
+WIDTH, HEIGHT = 800, 600
+FPS = 60
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+
+# Создание окна
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Лабиринт")
+
+# Игрок
+player_pos = [50, 50]
+player_size = 20
+
+# Лабиринт (представленный как список списков)
+maze = [
+    "111111111111111",
+    "100000000000001",
+    "101111111110101",
+    "100000000010001",
+    "111111111111111"
+]
+
+# Функция для отрисовки лабиринта
+def draw_maze():
+    for y, row in enumerate(maze):
+        for x, cell in enumerate(row):
+            if cell == '1':
+                pygame.draw.rect(screen, BLACK, (x * 50, y * 50, 50, 50))
+
+# Основной игровой цикл
+clock = pygame.time.Clock()
+while True:
+    screen.fill(WHITE)
+    draw_maze()
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] and maze[player_pos[1] // 50][(player_pos[0] // 50) - 1] == '0':
+        player_pos[0] -= 5
+    if keys[pygame.K_RIGHT] and maze[player_pos[1] // 50][(player_pos[0] // 50) + 1] == '0':
+        player_pos[0] += 5
+    if keys[pygame.K_UP] and maze[(player_pos[1] // 50) - 1][player_pos[0] // 50] == '0':
+        player_pos[1] -= 5
+    if keys[pygame.K_DOWN] and maze[(player_pos[1] // 50) + 1][player_pos[0] // 50] == '0':
+        player_pos[1] += 5
+
+    pygame.draw.rect(screen, (0, 255, 0), (player_pos[0], player_pos[1], player_size, player_size))
+    pygame.display.flip()
+    clock.tick(FPS)
