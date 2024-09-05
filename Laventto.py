@@ -52,4 +52,6 @@ if keys[pygame.K_DOWN]:
     if maze[player_y][player_x - 1] ==0 :
         player_x += 1
 
-if player
+if player_x == finish_x and player_y == finish_y:
+        print("ShiRyou!")
+        running = False
