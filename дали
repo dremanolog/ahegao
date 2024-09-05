@@ -9,10 +9,10 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Лабиринт")
+pygame.display.set_caption("Laburint")
 
-player_pos = [50, 50]
-player_size = 20
+player_pos = [25, 25]
+player_size = 15
 
 maze = [
     "111111111111111",
