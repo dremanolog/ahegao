@@ -11,7 +11,7 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 
-block_size = 100
+block_size = 80
 
 maze = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -21,20 +21,19 @@ maze = [
     [1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1],
     [1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
     [1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1],
-    [1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1],
+    [1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1],
     [1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ]
 
 player_x, player_y = 1, 1
-finish_x, finish_y = 14, 9
+finish_x, finish_y = 14, 8
 
 
-background = pygame.image.load(r'C:\Users\kitaez\Desktop\sdfsd\фон.png')
-wall_image = pygame.image.load(r'C:\Users\kitaez\Desktop\sdfsd\стенка4.jpg')
-play_image = pygame.image.load(r'C:\Users\kitaez\Desktop\sdfsd\игрок2.png')
-главное_меню = pygame.image.load(r'C:\Users\kitaez\Desktop\sdfsd\стенка.png')
+background = pygame.image.load(r'C:\Users\Студент.LAPTOP-VEDICB9L\Desktop\dsv\cntyf.png')
+wall_image = pygame.image.load(r'C:\Users\Студент.LAPTOP-VEDICB9L\Desktop\dsv\i.png')
+play_image = pygame.image.load(r'C:\Users\Студент.LAPTOP-VEDICB9L\Desktop\dsv\239-20211129_181321.png')
+главное_меню = pygame.image.load(r'C:\Users\Студент.LAPTOP-VEDICB9L\Desktop\dsv\cntyf.png')
 
 def start_menu():
     while True:
@@ -92,5 +91,7 @@ while running:
     
     pygame.draw.rect(win, GREEN, (finish_x * block_size, finish_y * block_size, block_size, block_size))
 
+    pygame.display.update()
+    pygame.time.Clock().tick(10)
     pygame.display.update()
     pygame.time.Clock().tick(10)
