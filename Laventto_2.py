@@ -53,3 +53,22 @@ while running:
     if keys[pygame.K_DOWN]:
         if maze[player_y + 1][player_x] == 0:
             player_y += 1
+
+    if player_x == finish_x and player_y == finish_y:
+        print("Победа!")
+        running = False
+
+    win.fill(WHITE)
+
+    for row in range(len(maze)):
+        for col in range(len(maze[0])):
+            color = BLACK if maze[row][col] == 1 else WHITE
+            pygame.draw.rect(win, color, (col * block_size, row * block_size, block_size, block_size))
+
+    pygame.draw.rect(win, RED, (player_x * block_size, player_y * block_size, block_size, block_size))
+
+    pygame.draw.rect(win, GREEN, (finish_x * block_size, finish_y * block_size, block_size, block_size))
+
+    pygame.display.update()
+
+    pygame.time.Clock().tick(10)
